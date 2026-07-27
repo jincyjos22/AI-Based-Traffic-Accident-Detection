@@ -2,8 +2,8 @@
 
 An AI-powered traffic accident detection system that analyzes CCTV images and videos to detect road accidents, classify accident severity, and generate detection reports. The application is developed using MobileNetV2 Transfer Learning, TensorFlow/Keras, and Streamlit, providing an interactive web interface for real-time accident analysis.
 
-Technologies
-Python • TensorFlow • Keras • MobileNetV2 • Streamlit • OpenCV • NumPy • Pandas
+# Technologies:
+• Python • TensorFlow • Keras • MobileNetV2 • Streamlit • OpenCV • NumPy • Pandas
 
 ---
 
