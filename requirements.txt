@@ -1,0 +1,11 @@
+streamlit==1.46.1
+tensorflow==2.19.0
+keras==3.10.0
+numpy==2.1.3
+opencv-python-headless==4.12.0.88
+pillow==11.3.0
+pandas==2.3.1
+matplotlib==3.10.5
+scikit-learn==1.7.1
+reportlab==4.4.3
+fpdf2
