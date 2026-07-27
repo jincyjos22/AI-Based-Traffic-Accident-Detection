@@ -1,5 +1,21 @@
+# Python
 __pycache__/
 *.pyc
-dataset.zip
-.ipynb
-.keras
+*.pyo
+
+# Virtual environment
+venv/
+.env
+
+# Streamlit
+.streamlit/
+
+# Generated files
+processed_video.mp4
+processed_video_h264.mp4
+temp_video.mp4
+temp_image.jpg
+
+# OS files
+.DS_Store
+Thumbs.db
