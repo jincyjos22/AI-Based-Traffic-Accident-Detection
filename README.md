@@ -230,25 +230,28 @@ The application opens in your browser. Streamlit will print URLs you can use, fo
 
 ## Dashboard
 
-*Add screenshot*
+<img width="1862" height="887" alt="image" src="https://github.com/user-attachments/assets/9642bd51-9494-4618-8564-a97610693923" />
+
 
 ---
 
 ## Accident Detection
 
-*Add screenshot*
+<img width="1476" height="811" alt="image" src="https://github.com/user-attachments/assets/496f1f7e-062c-4b11-b1d3-b80d7098edc4" />
 
 ---
 
 ## Severity Prediction
 
-*Add screenshot*
+<img width="1352" height="772" alt="image" src="https://github.com/user-attachments/assets/f2313c8a-8c7c-4ab5-9957-6f080034e3e8" />
+
 
 ---
 
 ## Video Detection
 
-*Add screenshot*
+<img width="1512" height="652" alt="image" src="https://github.com/user-attachments/assets/af3c9f91-cdaa-4f00-8614-787b8ef39945" />
+
 
 ---
 
