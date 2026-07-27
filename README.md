@@ -152,7 +152,6 @@ AI-Based-Traffic-Accident-Detection/
 │── Traffic_accident_detection.ipynb
 ```
 
-> **Note:** `auth.py`, `utils_history.py`, and `utils_pdf.py` are imported by `app.py` and must be present in the project root. The two `.keras` model files must also sit alongside `app.py` — the app checks for them at startup and shows an error if either is missing.
 
 ---
 
