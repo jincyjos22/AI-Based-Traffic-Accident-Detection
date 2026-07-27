@@ -1,0 +1,10 @@
+Timestamp,Type,FileName,Prediction,Confidence (%),Severity,Processing Time (s)
+27-07-2026 22:32:43,Video,istockphoto-948679414-640_adpp_is.mp4,Accident,77.44,Severity1 (Minor),-
+27-07-2026 22:31:57,Image,595.jpg,Accident,70.25,Severity1 (Minor),1.21
+27-07-2026 22:28:10,Image,595.jpg,Accident,70.25,Severity1 (Minor),1.25
+27-07-2026 22:27:29,Image,a125.jpg,NonAccident,99.08,No Accident,8.5
+27-07-2026 14:50:08,Image,595.jpg,Accident,70.25,Severity1 (Minor),1.32
+27-07-2026 14:49:29,Image,9412.jpg,Accident,87.62,Severity3 (Severe),1.29
+27-07-2026 14:49:02,Image,29171.jpg,Accident,98.22,Severity2 (Moderate),1.36
+27-07-2026 14:48:34,Image,a125.jpg,NonAccident,99.08,No Accident,1.33
+27-07-2026 14:47:41,Video,istockphoto-948679414-640_adpp_is.mp4,Accident,77.44,Severity1 (Minor),-
