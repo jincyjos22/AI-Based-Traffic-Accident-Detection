@@ -223,7 +223,8 @@ The application opens in your browser. Streamlit will print URLs you can use, fo
 
 ## Login Page
 
-*Add screenshot*
+<img width="1142" height="557" alt="image" src="https://github.com/user-attachments/assets/15da63bb-fc5d-4c67-be88-422ff4b376ca" />
+
 
 ---
 
