@@ -200,7 +200,23 @@ The application opens in your browser. Streamlit will print URLs you can use, fo
 # 🖥️ Usage
 
 1. **Log in** through the authentication screen.
-2. **Image detection:** upload a CCTV image (`.jpg`, `.jpeg`, `.png`) to get an accident prediction, confidence score, severity assessment (if applicable), and a downloadable PDF report.
+2. **Image Detection:** Upload a clear road traffic or CCTV image (`.jpg`, `.jpeg`, `.png`). The application analyzes the image to:
+   - Detect whether an accident has occurred.
+   - Display the prediction and confidence score.
+   - Predict accident severity (only if an accident is detected).
+   - Generate a downloadable PDF report.
+
+   **Recommended images:**
+   - ✅ CCTV or road traffic images
+   - ✅ Clear accident or non-accident road scenes
+   - ✅ Front, side, or rear vehicle collisions
+   - ✅ Minor, moderate, or severe accidents
+
+   **Avoid:**
+   - ❌ Blurry or low-resolution images
+   - ❌ Cartoon or AI-generated images
+   - ❌ Images showing only a small portion of a damaged vehicle
+   - ❌ Images without vehicles or road scenes
 3. **Video detection:** upload CCTV footage (`.mp4`, `.avi`, `.mov`). The app samples frames, overlays live predictions, and produces an annotated, downloadable processed video plus a PDF summary.
 4. **Detection history:** review, filter, and export all past detections, or clear the log.
 
