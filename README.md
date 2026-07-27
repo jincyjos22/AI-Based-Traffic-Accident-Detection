@@ -1,6 +1,6 @@
 # 🚦 AI-Based Traffic Accident Detection
 
-An AI-powered CCTV monitoring dashboard that detects road accidents from images and video, predicts accident severity, and raises emergency alerts in real time. Built with **MobileNetV2 transfer learning**, **TensorFlow/Keras**, and a **Streamlit** dashboard.
+An AI-powered traffic accident detection system that analyzes CCTV images and videos to detect road accidents, predict accident severity, and generate emergency alerts. The application is built using **MobileNetV2 Transfer Learning**, **TensorFlow/Keras**, and **Streamlit**.
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-Keras-orange)
@@ -8,124 +8,196 @@ An AI-powered CCTV monitoring dashboard that detects road accidents from images 
 
 ---
 
-## 📖 Overview
+# 🌐 Live Demo
 
-This project uses deep learning to monitor traffic CCTV feeds and automatically:
+**Application URL:**
 
-1. **Detect accidents** — classifies a frame/image as `Accident` or `NonAccident`.
-2. **Predict severity** — if an accident is detected, a second model classifies it as `Severity 1 (Minor)`, `Severity 2 (Moderate)`, or `Severity 3 (Severe)`.
-3. **Raise alerts** — displays an on-screen emergency alert banner when an accident is detected.
-4. **Log and report** — every detection is logged to a history table and can be exported as a PDF report or CSV.
+`<Add your Streamlit deployment URL here after deployment>`
 
-The models are trained using **MobileNetV2 transfer learning** on a labeled accident image dataset, with data augmentation and class-weight balancing to handle class imbalance. The training pipeline also includes **Grad-CAM** visualizations for explainability, highlighting the image regions that most influenced each prediction.
+Example:
 
----
-
-## ✨ Features
-
-- 🔐 **Login-protected dashboard** (session-based authentication)
-- 📷 **Image detection** — upload a CCTV image and get an instant accident/no-accident prediction with confidence score
-- 🎥 **Video detection** — upload CCTV footage; frames are sampled and analyzed, with live annotated video preview and a downloadable processed video
-- ⚠️ **Severity prediction** — automatically triggered whenever an accident is detected
-- 🚨 **Emergency alert banner** for detected accidents
-- 🧾 **PDF report generation** for both image and video detections
-- 📜 **Detection history** — filterable table of past detections with CSV export and clear/reset option
-- 🗺️ **Smart City Map section** — placeholder UI for future GPS/Google Maps integration and emergency service routing
-- 🎨 Custom glassmorphism-styled Streamlit UI with background image support
+`https://your-app-name.streamlit.app`
 
 ---
 
-## 🧠 Model Architecture
+# 📖 Overview
 
-Both models use **MobileNetV2** (ImageNet weights) as a feature extractor, with a custom classification head:
+Road traffic accidents require immediate detection and response to reduce casualties and improve emergency management.
+
+This project uses deep learning to automatically analyze traffic CCTV images and videos and:
+
+* Detect whether an accident has occurred.
+* Classify the accident as Accident or Non-Accident.
+* Predict accident severity into:
+
+  * Severity 1 (Minor)
+  * Severity 2 (Moderate)
+  * Severity 3 (Severe)
+* Display emergency alerts.
+* Generate downloadable PDF reports.
+* Maintain a history of predictions.
+
+The application is implemented as an interactive Streamlit dashboard.
+
+---
+
+# ✨ Features
+
+* Login-protected dashboard
+* Image accident detection
+* Video accident detection
+* MobileNetV2 Transfer Learning
+* Automatic severity prediction
+* Emergency alert notification
+* Confidence score display
+* PDF report generation
+* Detection history
+* CSV export
+* Streamlit-based responsive interface
+* Smart City Map placeholder for future integration
+
+---
+
+# 🧠 Model Architecture
+
+## Accident Detection Model
+
+* Base Model: MobileNetV2
+* Input Size: 224 × 224 × 3
+* Output Classes:
+
+  * Accident
+  * NonAccident
+
+Transfer Learning with fine-tuning of the final layers is used for high prediction accuracy.
+
+## Severity Prediction Model
+
+A second MobileNetV2 model predicts accident severity only if an accident is detected.
+
+Output Classes:
+
+* Severity 1 (Minor)
+* Severity 2 (Moderate)
+* Severity 3 (Severe)
 
 | Model | Input Size | Output Classes | Notes |
 |---|---|---|---|
 | `accident_detection_model.keras` | 224×224×3 | `Accident`, `NonAccident` | Fine-tuned (last 30 layers unfrozen) |
 | `severity_prediction_model.keras` | 224×224×3 | `Severity1`, `Severity2`, `Severity3` | Base model frozen, trained on accident-only subset |
 
-**Training pipeline highlights** (see the training notebook):
-- Data augmentation: random flip, rotation, zoom, contrast, translation
-- Pixel rescaling to `[0, 1]` (`Rescaling(1./255)`)
-- Class-weight balancing via `sklearn.utils.class_weight.compute_class_weight`
-- `EarlyStopping` + `ModelCheckpoint` callbacks, best-model restoration
-- Evaluation via confusion matrix, classification report, ROC/precision-recall curves
-- **Grad-CAM** heatmaps for explainable predictions
+---
+
+# ⚙️ Technologies Used
+
+* Python
+* Streamlit
+* TensorFlow
+* Keras
+* MobileNetV2
+* OpenCV
+* NumPy
+* Pandas
+* Pillow
+* Matplotlib
+* Scikit-learn
 
 ---
 
-## 📁 Project Structure
+# 📂 Dataset
 
-```
+This project uses two datasets:
+
+### 1. Accident Detection Dataset
+
+Contains Accident and Non-Accident images.
+
+### 2. Accident Severity Dataset
+
+Contains accident images categorized into:
+
+* Severity 1
+* Severity 2
+* Severity 3
+
+> Due to GitHub storage limitations, the datasets are not included in this repository.
+
+**Dataset Download**
+
+`<Add Google Drive or Kaggle dataset link here>`
+
+---
+
+# 📁 Project Structure
+
+```text
 AI-Based-Traffic-Accident-Detection/
-├── app.py                             # Streamlit dashboard (main entry point)
-├── auth.py                            # Login / session authentication (required, not included above)
-├── utils_history.py                   # Detection history logging & CSV export helpers
-├── utils_pdf.py                       # PDF report generation helpers
-├── accident_detection_model.keras     # Trained accident detection model
-├── severity_prediction_model.keras    # Trained severity prediction model
-├── images/
-│   ├── background.png
-│   ├── project_banner.png
-│   ├── logo.png
-│   └── map_placeholder.png
-├── Traffic_accident_detection.ipynb   # Model training notebook (Colab)
-└── README.md
+
+│── app.py
+│── auth.py
+│── utils_history.py
+│── utils_pdf.py
+│── requirements.txt
+│── README.md
+│── .gitignore
+
+│── accident_detection_model.keras
+│── severity_prediction_model.keras
+
+│── images/
+│     ├── background.png
+│     ├── logo.png
+│     ├── project_banner.png
+│     └── map_placeholder.png
+
+│── Traffic_accident_detection.ipynb
 ```
 
-> **Note:** `auth.py`, `utils_history.py`, and `utils_pdf.py` are imported by `app.py` and must be present in the project root. The two `.keras` model files must also sit alongside `app.py` — the app checks for them at startup and will show an error if either is missing.
+> **Note:** `auth.py`, `utils_history.py`, and `utils_pdf.py` are imported by `app.py` and must be present in the project root. The two `.keras` model files must also sit alongside `app.py` — the app checks for them at startup and shows an error if either is missing.
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Installation
 
-### Prerequisites
-
-- Python 3.9+
-- pip
-
-### Installation
+Clone the repository
 
 ```bash
 git clone https://github.com/jincyjos22/AI-Based-Traffic-Accident-Detection.git
+```
+
+Go to the project folder
+
+```bash
 cd AI-Based-Traffic-Accident-Detection
+```
+
+Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-**Core dependencies:**
+---
 
-```
-streamlit
-tensorflow
-opencv-python
-pillow
-numpy
-pandas
-```
-
-### Add the trained models
-
-Download or train `accident_detection_model.keras` and `severity_prediction_model.keras` (see [Training](#-training-the-models) below) and place both files in the project root, next to `app.py`.
-
-### Run the app
+# ▶️ Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-Streamlit will print URLs you can open in your browser, for example:
+The application opens in your browser. Streamlit will print URLs you can use, for example:
 
 ```
   Local URL: http://localhost:8501
   Network URL: http://192.168.1.8:8501
 ```
 
-- Use the **Local URL** to access the dashboard from the same machine.
-- Use the **Network URL** to access it from another device on the same network (e.g. a phone or another PC).
+* Use the **Local URL** to access the dashboard from the same machine.
+* Use the **Network URL** to access it from another device on the same network (e.g. a phone or another PC).
 
 ---
 
-## 🖥️ Usage
+# 🖥️ Usage
 
 1. **Log in** through the authentication screen.
 2. **Image detection:** upload a CCTV image (`.jpg`, `.jpeg`, `.png`) to get an accident prediction, confidence score, severity assessment (if applicable), and a downloadable PDF report.
@@ -134,16 +206,89 @@ Streamlit will print URLs you can open in your browser, for example:
 
 ---
 
-## 🎓 Training the Models
+# 📸 Screenshots
 
-The full training pipeline is provided in `Traffic_accident_detection.ipynb` (originally built in Google Colab). At a high level it:
+## Login Page
+
+*Add screenshot*
+
+---
+
+## Dashboard
+
+*Add screenshot*
+
+---
+
+## Accident Detection
+
+*Add screenshot*
+
+---
+
+## Severity Prediction
+
+*Add screenshot*
+
+---
+
+## Video Detection
+
+*Add screenshot*
+
+---
+
+# 📊 Prediction Workflow
+
+```
+Upload Image / Video
+          │
+          ▼
+ Accident Detection Model
+          │
+     Accident?
+     │        │
+    No       Yes
+     │        │
+Display     Severity Model
+Result          │
+                ▼
+Severity 1 / Severity 2 / Severity 3
+```
+
+---
+
+# 📈 Model Training
+
+The models are trained using MobileNetV2 Transfer Learning.
+
+Training includes:
+
+* Image preprocessing
+* Data augmentation
+* Image normalization
+* Class balancing
+* Early stopping
+* Model checkpointing
+* Fine-tuning
+* Performance evaluation
+* Grad-CAM visualization
+
+The training notebook is available as:
+
+```
+Traffic_accident_detection.ipynb
+```
+
+At a high level, the training pipeline:
 
 1. Mounts a Google Drive dataset and extracts accident/non-accident image folders.
 2. Builds a binary image dataset (`Accident` vs `NonAccident`) with an 80/20 train/validation split.
-3. Applies augmentation and normalization, then fine-tunes a MobileNetV2-based classifier.
-4. Evaluates with confusion matrices, classification reports, and Grad-CAM visualizations.
-5. Repeats a similar pipeline on an accident-only, severity-labeled dataset to train the severity model.
-6. Saves both models as `accident_detection_model.keras` and `severity_prediction_model.keras`.
+3. Applies augmentation (random flip, rotation, zoom, contrast, translation) and pixel normalization (`Rescaling(1./255)`).
+4. Fine-tunes a MobileNetV2-based classifier (last 30 layers unfrozen) with class-weight balancing to handle class imbalance.
+5. Evaluates with confusion matrices, classification reports, ROC/precision-recall curves, and **Grad-CAM** heatmaps for explainability.
+6. Repeats a similar pipeline on an accident-only, severity-labeled dataset to train the severity model (base model frozen).
+7. Saves both models as `accident_detection_model.keras` and `severity_prediction_model.keras`.
 
 To retrain, update the dataset paths to your own data and run the notebook cells in order.
 
@@ -151,20 +296,71 @@ To retrain, update the dataset paths to your own data and run the notebook cells
 
 ---
 
-## 🔮 Roadmap
+# 📄 Reports
 
-- [ ] Live GPS location tagging from CCTV cameras
-- [ ] Google Maps API integration for accident location visualization
-- [ ] Automated emergency service routing
-- [ ] Traffic control center notification integration
-- [ ] Multi-camera / multi-feed monitoring
+The application automatically generates:
+
+* PDF prediction report
+* Detection history
+* CSV export
 
 ---
 
-## 👩‍💻 Author
+# 🔮 Future Improvements
 
-**Jincy M.S**
+* Live CCTV streaming
+* Real-time accident monitoring
+* Google Maps integration
+* GPS location tracking
+* Emergency service notification
+* Cloud deployment improvements
+* Multi-camera support
 
-## 📄 License
+---
 
-© 2026 All Rights Reserved.
+# 📦 Requirements
+
+Main libraries:
+
+```
+streamlit
+tensorflow
+numpy
+opencv-python
+pandas
+pillow
+matplotlib
+scikit-learn
+```
+
+---
+
+# 👩‍💻 Author
+
+**Jincy M.S.**
+
+Bachelor of Computer Applications (BCA)
+
+AI-Based Traffic Accident Detection Project
+
+---
+
+# 📜 License
+
+This project is developed for educational and academic purposes.
+
+Copyright © 2026 Jincy M.S.
+
+All Rights Reserved.
+
+---
+
+# ⭐ Acknowledgements
+
+* TensorFlow
+* Keras
+* Streamlit
+* OpenCV
+* MobileNetV2
+* Google Colab
+* Python Community
