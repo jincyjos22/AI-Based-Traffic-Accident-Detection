@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "salt": "4262d0f12616addd270474970d9a8cde",
+    "password_hash": "c9b88901ed017bc247ff7671b53cfdd22c222da9a25aa8e7d74a3de27774f08f",
+    "role": "admin",
+    "display_name": "Admin"
+  },
+  "operator": {
+    "salt": "ad4af06cbdce96bd03389cf66ba6b050",
+    "password_hash": "7036e95f94b2e53e6c335434892e6e4935d3f41aee6adb53beb89436016cc788",
+    "role": "operator",
+    "display_name": "Operator"
+  }
+}
