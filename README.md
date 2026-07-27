@@ -307,10 +307,6 @@ At a high level, the training pipeline:
 6. Repeats a similar pipeline on an accident-only, severity-labeled dataset to train the severity model (base model frozen).
 7. Saves both models as `accident_detection_model.keras` and `severity_prediction_model.keras`.
 
-To retrain, update the dataset paths to your own data and run the notebook cells in order.
-
-> ⚠️ **Important:** the class index order the deployed app uses (`ACCIDENT_CLASSES` and `SEVERITY_CLASSES` in `app.py`) must exactly match the alphabetical folder order Keras used when building `train_ds.class_names` / `severity_train.class_names` during training. Confirm these in the notebook output before deploying a retrained model.
-
 ---
 
 # 📄 Reports
