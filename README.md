@@ -1,6 +1,6 @@
 # 🚦 AI-Based Traffic Accident Detection
 
-An AI-powered traffic accident detection system that analyzes CCTV images and videos to detect road accidents, classify accident severity, and generate detection reports. The application is developed using MobileNetV2 Transfer Learning, TensorFlow/Keras, and Streamlit, providing an interactive web interface for real-time accident analysis.
+An AI-powered traffic accident detection system that analyzes CCTV images and videos to detect road accidents, classify accident severity, and generate detection reports. The application is developed using MobileNetV2 Transfer Learning, TensorFlow/Keras, and Streamlit, providing an interactive web interface for accident analysis from uploaded CCTV images and videos.
 Technologies:
 • Python • TensorFlow • Keras • MobileNetV2 • Streamlit • OpenCV • NumPy • Pandas
 
@@ -10,10 +10,11 @@ Technologies:
 
 **Application URL:**
 
-(https://ai-based-traffic-accident-detection-pdqrolpn4chxsrw9pnt62h.streamlit.app/)
+https://ai-based-traffic-accident-detection-pdqrolpn4chxsrw9pnt62h.streamlit.app/
 
----
+# 💻 GitHub Repository
 
+https://github.com/jincyjos22/AI-Based-Traffic-Accident-Detection
 # 📖 Overview
 
 Road traffic accidents require immediate detection and response to reduce casualties and improve emergency management.
