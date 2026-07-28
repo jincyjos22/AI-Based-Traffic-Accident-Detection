@@ -20,8 +20,8 @@ https://github.com/jincyjos22/AI-Based-Traffic-Accident-Detection
 
 For testing and academic project evaluation:
 
-**Username:** `admin`  
-**Password:** `YOUR_DEMO_PASSWORD`
+**Username:** `admin` 
+**Password:** `Admin@123`
 
 > This demo account is provided for academic project evaluation purposes only.
 
