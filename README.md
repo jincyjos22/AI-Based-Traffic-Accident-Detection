@@ -10,7 +10,7 @@ Technologies:
 
 **Application URL:**
 
-[`<Add your Streamlit deployment URL here after deployment>`](https://ai-based-traffic-accident-detection-pdqrolpn4chxsrw9pnt62h.streamlit.app/)
+(https://ai-based-traffic-accident-detection-pdqrolpn4chxsrw9pnt62h.streamlit.app/)
 
 Example:
 
