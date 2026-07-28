@@ -15,6 +15,18 @@ https://ai-based-traffic-accident-detection-pdqrolpn4chxsrw9pnt62h.streamlit.app
 # 💻 GitHub Repository
 
 https://github.com/jincyjos22/AI-Based-Traffic-Accident-Detection
+
+# 🔐 Demo Login
+
+For testing and academic project evaluation:
+
+**Username:** `admin`  
+**Password:** `YOUR_DEMO_PASSWORD`
+
+> This demo account is provided for academic project evaluation purposes only.
+
+---
+
 # 📖 Overview
 
 Road traffic accidents require immediate detection and response to reduce casualties and improve emergency management.
