@@ -12,10 +12,6 @@ Technologies:
 
 (https://ai-based-traffic-accident-detection-pdqrolpn4chxsrw9pnt62h.streamlit.app/)
 
-Example:
-
-`https://your-app-name.streamlit.app`
-
 ---
 
 # 📖 Overview
